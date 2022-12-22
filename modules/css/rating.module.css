@@ -1,0 +1,78 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    background-color: rgba(0, 0, 0, .01);
+    justify-content: center;
+    align-items: center;
+}
+
+.ratingModal {
+    position: absolute;
+    background-color: white;
+    width: 220px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+}
+
+#rating-value {
+    width: 110px;
+    border: 1px solid yellow;
+}
+
+.rating {
+    border: none;
+    float: left;
+    margin-left: 5px;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    content: '\2605';
+    margin: 5px;
+    font-size: 3rem;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.rating>.half:before {
+    content: '\2606';
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.rating>label {
+    color: #e3e3e3;
+    float: right;
+    cursor: pointer;
+}
+
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: var(--primary);
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~input:checked~label {
+    color: var(--primary);
+
+}

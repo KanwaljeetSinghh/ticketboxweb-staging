@@ -1,0 +1,42 @@
+{
+  "name": "ticket-box",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.12.2",
+    "@stripe/react-stripe-js": "^1.12.0",
+    "@stripe/stripe-js": "^1.39.0",
+    "cleave.js": "^1.6.0",
+    "crypto-js": "^4.1.1",
+    "firebase": "^9.8.4",
+    "js-cookie": "^3.0.1",
+    "moment": "^2.29.4",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-credit-cards": "^0.8.3",
+    "react-dom": "18.1.0",
+    "react-moment": "^1.1.2",
+    "react-phone-input-2": "^2.15.1",
+    "react-places-autocomplete": "^7.3.0",
+    "react-qr-code": "^2.0.8",
+    "react-share": "^4.4.1",
+    "react-social-share-buttons": "^1.0.2",
+    "react-spinners": "^0.13.4",
+    "react-toastify": "^9.0.8",
+    "swiper": "^8.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
+  },
+  "resolutions": {
+    "**/react": "17.0.2",
+    "**/react-dom": "17.0.2"
+  }
+}

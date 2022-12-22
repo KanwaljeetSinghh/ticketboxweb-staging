@@ -1,0 +1,84 @@
+.drop-down{
+    background: #FFF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    height: 48px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    min-width: 160px;
+}
+.drop-down.open{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.drop-down span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #808085;
+    cursor: pointer;
+    height: 100%;
+}
+.drop-down span:first-child{
+    overflow: hidden;
+}
+.drop-down ul{
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    top: 45px;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 0;
+    overflow: hidden;
+    background: #EEE;
+    color: #808085;
+    transition: 0.1s all ease-in-out;
+}
+
+.drop-down.open ul{
+    padding: 0px 0px 8px;
+    height: fit-content;
+    max-height: 150px;
+    overflow-y: scroll;
+    z-index:10;
+}
+
+.drop-down ul li{
+    font-weight: 500;
+    padding: 5px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.drop-down ul li:last-child{
+    border-bottom: none;
+}
+.drop-down ul li:hover{
+    background-color: #DCDCDC;
+}
+@media screen and (max-width:480px){
+    
+    .drop-down span{
+        font-size: 12px;
+    }
+    .drop-down ul li{
+        padding: 5px 13px;
+        font-size: 12px;
+    }
+    .drop-down span svg{
+        width:15px;
+        height: 15px;
+    }
+}

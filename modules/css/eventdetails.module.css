@@ -1,0 +1,216 @@
+.image__section{
+    max-width: 442px;
+    max-height: 400px;
+    flex-grow: 1;
+}
+.image__section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.slots-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:15px;
+    row-gap: 15px;
+}
+.event__slots{
+    padding: 10px;
+    border:2px solid #e6e6e6;
+    border-radius: 10px;
+}
+.event__slots.active{
+    border-color: var(--primary);
+}
+.event__title{
+    max-width: 356px;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.event__price{
+    color: #212121;
+    margin-right: 13px;
+}
+.event__price_2{
+    color: #888888;
+    text-decoration: line-through;
+}
+.event__venue_details{
+    margin-top: 20px;
+}
+.event__venue_svg{
+   background-color: #e8e8ec;
+   padding: 8px;
+   border-radius: 50%;
+}
+.event__venue_svg img{
+    width:15px;
+    height: 15px;
+}
+.event__venue_1{
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: #A3A8B3;
+}
+.event__venue_2{
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    margin-top: 4px;
+}
+.two-column-1{
+    width:50%;
+}
+.two-column-2{
+    width:42%;
+    margin-left: 8%;
+}
+/* request event page */
+.request__event__detail{
+    height: fit-content;
+}
+.request__event label{
+    font-size:14px;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 28px 0 8px 0;
+}
+.request__event textarea{
+    outline:none;
+    border:none;
+    border-radius:12px;
+    padding: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Sora';
+    background-color: var(--smoke-white);
+}
+.swiper__slider-button-left{
+    position: absolute;
+    z-index: 999;
+    top:45%;
+    left: -20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 8px;
+    cursor:pointer;
+    border: 1px solid var(--primary);
+    user-select: none;
+}
+.swiper__slider-button-right{
+    position: absolute;
+    padding-left: 8px;
+    z-index: 999;
+    top:45%;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    user-select: none;
+    transform: rotate(180deg);
+}
+@media only screen and (max-width:567.98px) {
+    .image__section{
+        max-width: 100%;
+        max-height: 250px;
+        flex-grow: 1;
+    }
+    .event__details{
+        margin-top: 4%;
+    }
+    .event__title{
+        max-width: 1005;
+        text-align: left;
+        margin-bottom: 4px;
+    }
+    .event__venue_details{
+        margin-top: 25px;
+    }
+    .two-column{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .two-column-1{
+        width:100%;
+        margin-top: 8%;
+    }
+    .two-column-2{
+        width:100%;
+        margin-top: 4%;
+        margin-left: 0;
+    }
+    .slots-wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+        row-gap: 10px;
+        gap:10px;
+    }
+    .event-detail-icons{
+        flex-direction: row-reverse;
+        margin: 0;
+    }
+    .request__event svg{
+        width: 23px;
+        height: 23px;
+    }
+}
+@media screen and (min-width:568px) and (max-width:991.98px) {
+    .image__section{
+        width: 100%;
+        max-width: 100%;
+    }
+    .image__section img{
+        width: 100%;
+        height: 250px;
+    }
+    .event__details{
+        margin-top: 4%;
+    }
+    .slots-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:10px;
+        row-gap: 10px;
+    }
+    .event-detail-icons{
+        flex-direction: row-reverse;
+    }
+    .event__title{
+        max-width: 100%;
+        text-align: left;
+        margin-bottom: 4px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991.98px) {
+    
+    .slots-wrapper{
+        display: grid;
+        grid-template-columns:repeat(auto-fit,minmax(210px,215px));
+        gap:10px;
+        row-gap: 10px;
+    }
+    .event__slots{
+        padding: 10px 8px;
+        border:1px solid #e6e6e6;
+        border-radius: 10px;
+    }
+    .event__venue_svg{
+        background-color: #e8e8ec;
+        padding: 8px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+}

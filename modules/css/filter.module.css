@@ -1,0 +1,70 @@
+.filter__bar{
+    padding: 5px 0;
+}
+.search__bar{
+    background: #F0F8F8;
+    padding: 12px 20px;
+}
+/* Filer vehicle color start */
+.vehicle__colors{
+    gap:12px;
+    grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+}
+.vehicle__Button{
+    width:80px;
+    height:80px;
+    border:1px solid #dadada;
+}
+/* Filer vehicle color end */
+
+/* Price show start */
+
+.filters label{
+    font-size:14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.filters select{
+    padding:10px 10px;
+    font-size:16px;
+    font-weight: 500;
+    color: #808085;
+    line-height: 24px;
+   
+}
+.filters select:focus-visible{
+    outline:none;
+    border:none;
+}
+.ratings{
+    padding:6px 10px;
+}
+.ratings.active{
+    border:1px solid var(--primary);
+}
+.ratings svg{
+    margin-top:-3px;
+}
+.ratings.active svg path{
+    fill: var(--primary);
+}
+.ratings.active span{
+    color: var(--primary);
+}
+.filter-result-rating svg:first-child{
+    margin-top:-4px;
+}
+.filters label{
+    font-size:16px;
+    font-weight: 400;
+    user-select: none;
+    margin-top: 3px;
+}
+.filters input[type=radio]{
+    accent-color: var(--primary);
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+    margin-top: -1px;
+}

@@ -1,0 +1,231 @@
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    width: 100%;
+}
+.container-fluid{
+    width: 100%;
+}
+.height-fc{
+    height: fit-content;
+}
+
+.error-box{
+    padding:  12px 25px;
+    width: fit-content;
+    color: #721c24;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+.success-box{
+    margin-top: 20px;
+    padding:  12px 25px;
+    width: fit-content;
+    background-color: rgb(142, 236, 107,0.6);
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+.tooltip {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+}
+.tooltip div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+}
+.tooltip .tooltiptext {
+    width: 140px;
+    height: 40px;
+    visibility: hidden;
+    background: var(--gradient);
+    color: var(--smoke-white);
+    text-align: center;
+    border-radius: 6px;
+    padding: 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+.tooltip .tooltiptext svg{
+    width:20px;
+    height: 20px;
+}
+.tooltip.share .tooltiptext{
+    visibility: visible;
+    opacity:1 ;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  var(--primary) transparent transparent transparent;
+}
+/* home-featured tab start*/
+
+.mb-75{
+    margin-bottom:clamp(3.5rem, 2.1667rem + 3.7037vw, 7.5rem);
+}
+.mb-67{
+    margin-bottom: clamp(3rem, 1.7667rem + 3.4259vw, 6.7rem);
+}
+.mt-75{
+    margin-top:clamp(3.5rem, 2.1667rem + 3.7037vw, 7.5rem);
+}
+.mt-123{
+    margin-top: clamp(6rem, 3.9000rem + 5.8333vw, 12.3rem);
+}
+.height-modal{
+    height: 50vh;
+}
+.pl-80{
+    padding-left: clamp(2rem, -2.0000rem + 6.9444vw, 8rem);
+}
+.home-featured-tab{
+    padding: 6px 16px;
+}
+.small.home-featured-tab{
+    background-color: var(--white);
+    border:1px solid #DCDCDC;
+    color:#767C8D;
+}
+.small.home-featured-tab.active{
+    border-color:#5D48D0;
+}
+.large.home-featured-tab:hover{
+    background: var(--gradient);
+    color: var(--white);
+}
+.large.home-featured-tab.active{
+    background: var(--gradient);
+    color: var(--white);
+}
+
+/* home-featured tab end*/
+.circle{
+    width:34px;
+    height:34px;
+    line-height: 34px;
+    border-radius: 50%;
+}
+.slider{
+    height: 10px;
+    width: 100%;
+    margin-top:-5px;
+    background: #E0F2F5;
+    border-radius: 100px;
+    position: relative;
+}
+.slider .progress{
+    height: 10px;
+    border-radius: 100px;
+    background-color: var(--primary);
+    position: absolute;
+}
+.range-input{
+    position: relative;
+}
+.range-input input{
+    position: absolute;
+    left: -4px;
+    height: 28px;
+    width: 111.5%;
+    border-radius: 100px;
+    -webkit-appearance: none;
+    pointer-events: none;
+}
+.range-input .range-min{
+    z-index: 5;
+}
+.range-input .range-max{
+    z-index: 5;
+}
+
+.buble{
+    top:-78px;
+}
+.buble-max{
+    top:-45px;
+}
+
+.ticketbox-modal{
+    display: none;
+}
+.ticketbox-modal.modal-on{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    z-index: 9;
+    top:0;
+    position: absolute;
+}
+@media screen and (max-width:567.98px)
+{
+  
+  .home-featured-tab{
+    padding: 2px 4px;
+  }
+  .pl-80{
+    padding-left: 0;
+  }
+  
+}
+@media screen and (min-width:400px) and (max-width:567px)
+{
+  
+    .home-featured-tab{
+        padding: 5px 10px;
+    }
+    .pl-80{
+        padding-left: 0;
+    }
+}
+@media only screen and (min-width:576px) and (max-width:767px){
+    .home-featured-tab{
+        padding: 5px 10px;
+    }
+    
+}
+@media only screen and (min-width:767px) and (max-width:1044px){
+    .home-featured-tab{
+        padding: 5px 7px;
+    }
+    
+}
+@media only screen and (max-width:1200px){
+    .container{
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

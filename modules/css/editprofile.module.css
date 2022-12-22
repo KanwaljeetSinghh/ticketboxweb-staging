@@ -1,0 +1,139 @@
+.profile-img{
+    height:296px;
+    width:296px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.1));
+}
+.edit-profile{
+    padding:0 75px 75px 75px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.edit-profile form label{
+    margin-top: 20px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.edit-profile form input[type=text]{
+    padding:12px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: #EEEEEF;
+    border-radius:8px;
+    outline: none;
+    border:none;
+}
+.edit-profile form input[type=radio]{
+    accent-color: var(--primary);
+    width:20px;
+    height: 20px;
+    margin-top: -3px;
+}
+.edit-profile-phone {
+    padding:12px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: #EEEEEF;
+    border-radius:8px;
+}
+.edit-profile-phone input[type=number]{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    background: transparent;
+    border-radius:8px;
+    outline: none;
+    border:none;
+}
+.edit-profile form input::-webkit-outer-spin-button,
+.edit-profile form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.edit-profile input[type=number] {
+  -moz-appearance: textfield;
+}
+.password-section-wrapper{
+    padding-left: 8%;
+}
+
+.password{
+    padding:12px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #EEEEEF;
+    font-weight: 500;
+    border-radius:8px;
+    outline: none;
+    border:none;
+    position: relative;
+}
+.password input[type=password],.password input[type=text]{
+    border:none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    padding: 0 !important;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.password svg{
+    position: absolute;
+    right:8px;
+}
+.show.password input[type=text]{
+    display: block;
+}
+.show input[type=password]{
+    display: none;
+}
+.password input[type=text]{
+    display: none;
+}
+@media screen and (max-width:567.98px) {
+    .edit-profile{
+        padding:0 5% 5%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .edit-profile form label{
+        margin-top: 20px;
+    }
+    .password-section-wrapper{
+        margin-top: 100px;
+        padding-left: 0;
+        border: none;
+    }
+}
+@media screen and (min-width:568px) and (max-width:767.98px) {
+    
+    .edit-profile form label{
+        margin-top: 20px;
+    }
+    .password-section-wrapper{
+        margin-top: 100px;
+        padding-left: 0;
+        border: none;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991.98px) {
+    .edit-profile{
+        padding:0 5% 5%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .edit-profile form label{
+        margin-top: 20px;
+    }
+    
+}

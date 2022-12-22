@@ -1,0 +1,104 @@
+.payment-form label{
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.payment-form input,.phone-input{
+    padding:12px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color:#808085;
+    background-color: var(--smoke-white);
+    border-radius:8px;
+    outline: none;
+    border:none;
+}
+.payment-form input.active{
+    border:1px solid red;
+}
+.payment-form input[type=radio]{
+    background: transparent;
+}
+.payment-method label{
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.price-summary span{
+    margin-bottom: 12px;
+}
+.payment-form input::-webkit-outer-spin-button,
+.payment-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payment-form input[type=radio],.payment-form input[type=checkbox]{
+    accent-color: var(--primary);
+    width: 20px;
+    height: 20px;
+}
+/* Firefox */
+.payment-form input[type=number] {
+  -moz-appearance: textfield;
+}
+.slots-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(146px,235px));
+    gap: 10px;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+.slots-wrapper li{
+    list-style: none;
+}
+.slots{
+    padding:12px 5px;
+    border:2px solid  var(--smoke-white);
+    display: flex;
+    flex-direction: column;
+    border-radius:8px;
+}
+
+.slots.active{
+    border:2px solid var(--primary)
+}
+.card-wrapper{
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    border-radius: 16px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.card-wrapper svg{
+    width:45px;
+    height: 45px;
+    margin-right: 20px;
+}
+.card-wrapper-small{
+    display: none;
+}
+
+@media screen and (max-width:381.98px) {
+    .card-wrapper{
+        display: none;
+    }
+    .card-wrapper-small{
+        padding: 20px;
+        box-shadow: 0 4px 16px rgba(0,0,0,.2);
+        border-radius: 16px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .card-wrapper-small svg{
+        width:45px;
+        height: 40px;
+        margin-right: 20px;
+    }
+}
