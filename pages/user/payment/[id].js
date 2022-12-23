@@ -650,7 +650,7 @@ export default function PaymentDetails() {
                                                 <Moment utc format="dddd MMMM D">{item.startDateTime}</Moment>
                                             </span>
                                             <span className="text-primary font-12 f-600 mt-1">
-                                                <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment> IST
+                                                <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment>
                                             </span>
                                         </div>
                                     </li>}

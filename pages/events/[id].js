@@ -414,7 +414,7 @@ export default function EventDetails(props) {
                                             <Moment utc format="dddd MMMM D">{item.startDateTime}</Moment>                                            
                                         </span>
                                         <span className={` font-14 f-500 text-gradient ${styles["event__venue_2"]}`}>
-                                            <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment> IST
+                                            <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment>
                                         </span>
                                     </div>
                                 </div>

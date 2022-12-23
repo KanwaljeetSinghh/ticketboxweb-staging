@@ -159,7 +159,7 @@ function EventDetail(props){
                                     <Moment utc format="dddd MMMM D">{item.startDateTime}</Moment>
                                 </span>
                                 <span className={`${styles["event__venue_2"]} font-14 f-500`}>
-                                    <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment> IST
+                                    <Moment utc format="hh:mm A" >{item.startDateTime}</Moment> - <Moment utc format="hh:mm A" >{item.endDateTime}</Moment>
                                 </span>
                             </div>
                         </div>
