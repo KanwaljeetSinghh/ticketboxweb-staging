@@ -59,7 +59,7 @@ export default function PaymentDetails() {
         startDateTime:0,
         endDateTime:0
     });
-    
+    const [notComplimentaryTickets,setNotComplimentaryTickets] = useState([])
     // The state used for shown the cards detail page
     const [cardPage, setCardPage] = useState(false);
     const [newCardModal, setNewCardModal] = useState(false)
@@ -561,6 +561,13 @@ export default function PaymentDetails() {
                     }
                     setSlot(obj);
                 }
+                let comp = [];
+                result.event.tickets.map((item)=>{
+                    if(item.enable && !item.isComplimentary){
+                        comp.push(item)
+                    }
+                })
+                setNotComplimentaryTickets(comp)
             })
             .catch(error => console.log('error', error));
         }
@@ -698,11 +705,11 @@ export default function PaymentDetails() {
                                 <h4 className="f-700 l-20 mb-0 col-12">Ticket Type & Price</h4>
                                 <span className="mt-1 font-14 l-20 f-500 text-light-grey">Maximum 4 tickets per user</span>
                                 <div className="col-12 mt-1">
-                                    <TicketsAdder data={data.tickets} index="0" count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
+                                    <TicketsAdder data={notComplimentaryTickets} index="0" count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
                                 </div>
                                 {addMore && data.tickets.map((item,index) => {
                                     if(index!=0) return ( <div key={`ticket-adder-${index}`} className="col-12">
-                                        <TicketsAdder data={data.tickets} index={index} count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
+                                        <TicketsAdder data={notComplimentaryTickets} index={index} count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
                                     </div>
                                     )
                                 })}

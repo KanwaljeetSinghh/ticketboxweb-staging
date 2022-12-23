@@ -26,6 +26,7 @@ function EventDetail(props){
     const [ForgotPasswordModal,setForgotPasswordModal] = useState(false);
     const tags = [];
     const stars = [];
+    const [showMoreLess,setShowMoreLess] = useState(false)
     let link = router.asPath;
     for(let i=1;i<=5;i++){
         stars.push(i);
@@ -139,7 +140,8 @@ function EventDetail(props){
                             </div>
                         </div>
                         <span className="col-12 font-14  text-light-grey " style={{whiteSpace:"pre-line",lineHeight:"16px"}}> 
-                            {props.data.description}  
+                            {showMoreLess ? props.data.description : (props.data.description).substr(0,100)} 
+                            {(props.data.description).length > 100 && <span className="text-primary cursor-pointer ml-1" onClick={e => setShowMoreLess(prev=>!prev)}>{showMoreLess?"Read less.":"...Read more."}</span>} 
                         </span>
                     </div>
                 </div>

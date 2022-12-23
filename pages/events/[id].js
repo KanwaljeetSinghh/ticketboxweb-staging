@@ -51,6 +51,8 @@ export default function EventDetails(props) {
   const [addMore, setAddMore] = useState(false);
   //for requesting event successfully
   const [eventRequest,setEventRequest] = useState(false);
+  const [notComplimentaryTickets,setNotComplimentaryTickets] = useState([])
+
   const eventRequestHandler= () =>{
       setEventRequest(prev => !prev);
       router.push(`/user`)
@@ -207,14 +209,21 @@ export default function EventDetails(props) {
         fetch(process.env.URL+"/user/event/"+idx, requestOptions)
         .then(response => response.json())
         .then(result => {
-          setData(result)
-          if(result.event.slots.length == 1){
-            let obj = {
-                "startDateTime": result.event.slots[0].startDateTime,
-                "endDateTime": result.event.slots[0].endDateTime
+            setData(result)
+            if(result.event.slots.length == 1){
+                let obj = {
+                    "startDateTime": result.event.slots[0].startDateTime,
+                    "endDateTime": result.event.slots[0].endDateTime
+                }
+                setSlot(obj);
             }
-            setSlot(obj);
-        }
+            let comp = [];
+            result.event.tickets.map((item)=>{
+                if(item.enable && !item.isComplimentary){
+                    comp.push(item)
+                }
+            })
+            setNotComplimentaryTickets(comp)
         })
         .catch(error => console.log('error', error));
         fetch(process.env.URL+"/user/event/list?city=all&event="+idx, requestOptions)
@@ -418,11 +427,11 @@ export default function EventDetails(props) {
                         <DropDownCommittee color="#EEE" placeholder="Select" data={data.event.committeeMembers} handler={committeeMemberHandler}></DropDownCommittee>
                         <label>Ticket type & price</label>
                         <div className="col-12 mt-1">
-                            <TicketsAdder data={data.event.tickets} index="0" count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
+                            <TicketsAdder data={notComplimentaryTickets} index="0" count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
                         </div>
                         {addMore && data.event.tickets.map((item,index) => {
                             if(index!=0) return ( <div className="col-12">
-                                <TicketsAdder data={data.event.tickets} index={index} count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
+                                <TicketsAdder data={notComplimentaryTickets} index={index} count={ticketCount} handler={ticketCountHandler}></TicketsAdder>
                             </div>
                             )
                         })}
