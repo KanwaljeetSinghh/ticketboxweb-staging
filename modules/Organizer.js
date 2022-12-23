@@ -70,9 +70,9 @@ function Organizer(props){
                 </div>
                 
             </div>
-            <p className={` f-500 font-16 l-20 text-grey`} style={{whiteSpace:"pre-line",lineHeight:"16px"}}>
+            {/* <p className={` f-500 font-16 l-20 text-grey`} style={{whiteSpace:"pre-line",lineHeight:"16px"}}>
                 {props.data.description} 
-            </p>
+            </p> */}
             {loading && <Loader/>}
         </div>
     )
