@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
 
   return <>  
     <Head>
-      <link rel="shortcut icon" href="/images/logo.png" />
+      <link rel="shortcut icon" href="/images/favicon.png" />
     </Head>
     <Layout>
       <Component {...pageProps} />
