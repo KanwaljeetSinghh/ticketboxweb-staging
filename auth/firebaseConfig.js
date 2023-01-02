@@ -2,13 +2,13 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBIY_-LSlwExQ6F0Ibj0o3KUAFrXWWzcLQ",
-  authDomain: "ticket-box-staging.firebaseapp.com",
-  projectId: "ticket-box-staging",
-  storageBucket: "ticket-box-staging.appspot.com",
-  messagingSenderId: "678036788945",
-  appId: "1:678036788945:web:cd1fab5ffee37d4636d7f0",
-  measurementId: "G-NP2HCB5ECR"
+  apiKey: "AIzaSyBtG6sQFQeiyD5mOxApnkDI9Z4FzK6SVtc",
+  authDomain: "app.ticketboxonline.com",
+  projectId: "ticket-box-302a6",
+  storageBucket: "ticket-box-302a6.appspot.com",
+  messagingSenderId: "685819179355",
+  appId: "1:685819179355:web:0168616b10460f16c4ea7e",
+  measurementId: "G-79HDBMENVK"
 };
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
