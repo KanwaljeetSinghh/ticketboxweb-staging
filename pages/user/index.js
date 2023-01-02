@@ -95,7 +95,7 @@ export default function Home(props) {
     }
     document.getElementById("header").classList.remove(styles["fixed-header"]);
   },[authUser]);
-
+ 
   if(data == null){
     return <></>
   }

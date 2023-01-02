@@ -46,44 +46,58 @@ export default function Home(props) {
     if(token){
       router.push("/user");
     }
-    setData(props.data);
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    fetch(process.env.URL+"/event/list?city=all&tab", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        setData(result)
+      }
+    )
+    .catch(error => console.log('Error While filtering', error));
     document.getElementById("header").classList.remove(styles["fixed-header"]);
   },[authUser]);
-  
-  return (
-    <>
-      <Banner auth={false}></Banner>
-      {data.status && <>
-        <div className={`container d-flex-wrap explore-events`} id="explore-events">
-          <SectionHeading title="Explore Events"></SectionHeading>
-          <FeaturedTabs classes="index large " data={tabs} handler={tabsHandler}></FeaturedTabs>
-          <div className={styles["list-grid"]}>
-            {data.events.map((item,index)=> <Card key={index} data={item}></Card>)}
+  if(!data){
+    return <Loader/>
+  }
+  else{
+    return (
+      <>
+        <Banner auth={false}></Banner>
+        {data.status && <>
+          <div className={`container d-flex-wrap explore-events`} id="explore-events">
+            <SectionHeading title="Explore Events"></SectionHeading>
+            <FeaturedTabs classes="index large " data={tabs} handler={tabsHandler}></FeaturedTabs>
+            <div className={styles["list-grid"]}>
+              {data.events.map((item,index)=> <Card key={index} data={item}></Card>)}
+            </div>
           </div>
-        </div>
-      </>}
-      <ToastContainer
-          className={"toaster"}
-          position={'top-right'}
-          hideProgressBar={false}
-          closeOnClick={true}
-          draggable={true}
-      ></ToastContainer>
-      {loading && <Loader/>}
-    </>
-  )
+        </>}
+        <ToastContainer
+            className={"toaster"}
+            position={'top-right'}
+            hideProgressBar={false}
+            closeOnClick={true}
+            draggable={true}
+        ></ToastContainer>
+        {loading && <Loader/>}
+      </>
+    )
+  }
 }
-export async function getServerSideProps() {
-  const res = await fetch('https://api.ticketboxonline.com/api/v1/event/list?city=all', { 
-    method: 'GET', 
-    headers: new Headers({
-      'Content-Type': 'application/json'
-    })
-  });
-  const data = await res.json();
+// export async function getServerSideProps() {
+//   const res = await fetch('https://api.ticketboxonline.com/api/v1/event/list?city=all', { 
+//     method: 'GET', 
+//     headers: new Headers({
+//       'Content-Type': 'application/json'
+//     })
+//   });
+//   const data = await res.json();
 
-  // Pass data to the page via props
-  return { props: { 
-    data:data,
-  }}
-}
+//   // Pass data to the page via props
+//   return { props: { 
+//     data:data,
+//   }}
+// }
